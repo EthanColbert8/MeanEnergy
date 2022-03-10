@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
 
     double completeTopSum, completeBottomSum;
     MPI_Reduce(&topSum, &completeTopSum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-	MPI_Reduce(&bottomSum, &completeBottomSum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&bottomSum, &completeBottomSum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if (rank == 0) {
         double meanEnergy = (hbar / 2) * omega * completeTopSum / completeBottomSum;
