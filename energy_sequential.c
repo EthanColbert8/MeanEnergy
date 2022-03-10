@@ -19,10 +19,9 @@ int main(int argc, char* argv[]) {
 
     double topSum = 0.0;
     double bottomSum = 0.0;
-    double temp;
 
     for (long count = 0; count <= n; count++) {
-        temp = exp(coeff * count);
+        double temp = exp(coeff * count);
         topSum += (2*count + 1) * temp;
         bottomSum += temp;
     }
