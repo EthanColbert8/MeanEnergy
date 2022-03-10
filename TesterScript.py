@@ -32,5 +32,5 @@ for test in range(0, numTests):
     if comparison < 0.05:
         print("Test", test+1, "passed!")
     else:
-        print("Oops! Test", test, "failed.")
+        print("Oops! Test", test+1, "failed.")
     print("Obtained result: ", obtainedResult, "\nExpected result:", expectedResult, "\n")
