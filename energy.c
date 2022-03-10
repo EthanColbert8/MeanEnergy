@@ -29,12 +29,7 @@ int main(int argc, char* argv[]) {
     double topSum = 0.0;
     double bottomSum = 0.0;
 
-    /* I tried using integer division, but it resulted in most of the nodes
-     * doing no work because start and end would round off to the same value. */
-    long start = rank == 0 ? 0 : ((double) rank / size) * n + 1;
-    long end = ((double) (rank + 1) / size) * n;
-
-    for (long count = start; count <= end; count++) {
+    for (long count = rank; count <= n; count += size) {
         double temp = exp(coeff * count);
         topSum += (2*count + 1) * temp;
         bottomSum += temp;
