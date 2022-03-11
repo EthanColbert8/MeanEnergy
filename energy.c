@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
     if (rank == 0) {
         double meanEnergy = (hbar / 2) * omega * completeTopSum / completeBottomSum;
         printf("Mean energy is: %g\n", meanEnergy);
-        printf("Computation took %g seconds to complete.\n", MPI_Wtime());
+        printf("Computation took %g seconds to complete.\n", MPI_Wtime() - startTime);
     }
 
     MPI_Finalize();
